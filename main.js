@@ -4,10 +4,15 @@ const app = express();
 const port =3001;
 const Mydata = require("./models/mydataschema");
 
+app.set('view engine','ejs');
+
 app.use(express.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
-    res.sendFile('./views/index.html',{root : __dirname});
+    Mydata.find()
+    .then((result)=>{    res.render("index",{mytitle:"home page",array:result});})
+    .catch((err)=>{console.log(err)});
+
 });
 
 

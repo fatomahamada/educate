@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>  <%= mytitle %> </title>
     <style>
     input,button{
         font-size: 33px;
@@ -17,7 +17,14 @@
     <input type="text" name="userName">
     <br>
     <br>
+    <h1>And Age?</h1>
+    <input type="number" name="age">
+    <br>
+    <br>
     <button>send to DB</button>
     </form>
+
+    <h1>your name is <%= array.at(-1).userName %></h1>
+    <h1>and age is <%= array.at(-1).age %></h1>
 </body>
 </html>
