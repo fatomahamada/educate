@@ -4,8 +4,26 @@ const app = express();
 const port =3001;
 const Mydata = require("./models/mydataschema");
 
+// auto refresh
+const path =require('path');
+const livereload = require('livereload');
+const LiveReloadServer =livereload.createServer();
+LiveReloadServer.watch(path.join(__dirname,'public'));
+
+const connectlivereload = require ('connect-livereload');
+app.use(connectlivereload());
+
+LiveReloadServer.server.once("connect", () =>{
+    setTimeout(()=>{
+        LiveReloadServer.refresh("/");
+    }, 100);
+});
+
+// 
+
 app.set('view engine','ejs');
 
+app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
