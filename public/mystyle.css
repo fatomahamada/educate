@@ -120,3 +120,108 @@ form button {
 .detail-item .value {
     color: #333;
 }
+
+footer {
+    background-color: #f8bbd0;
+    color: #4a2e2b;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #4a2e2b;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #4a2e2b;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.about-section {
+    background-color: #e6dde0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.about-section h2 {
+    margin-bottom: 10px;
+}
+
+
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #4a2e2b;
+    text-align: center;
+}
+
+.contact-form {
+    background-color: #e7d0d8;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #4a2e2b;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.submit-btn {
+    background-color: #4a2e2b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}

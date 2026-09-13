@@ -8,13 +8,8 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo">💡</div>
-        <div class="nav-links">
-            <a href="/">home</a>
-            <a href="create.html">create</a>
-        </div>
-    </nav>
+    <%- include('./components/navbar.ejs') %>
+
 
     <div class="container">
         <h1>update this item ...</h1>
@@ -43,6 +38,6 @@
             <button type="submit">update</button>
         </form>
     </div>
-
+<%- include('./components/footer.ejs') %>
 </body>
 </html>
