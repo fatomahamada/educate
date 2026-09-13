@@ -22,14 +22,20 @@ nav {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    font-size: 20px;
 }
 
+.nav-links a:hover {
+    color:#dcaabb;
+    font-size: 25px;
+}
 .container {
     padding: 20px;
 }
 
 h1 {
     color: #5d4037; 
+    text-align: center;
 }
 
 .btn {
