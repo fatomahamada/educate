@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  <%= mytitle %> </title>
+    <title>home</title>
     <link rel="stylesheet" href="mystyle.css">
-    <style>
-    input,button{
-        font-size: 33px;
-    }
-    </style>
 </head>
 <body>
-    <form  action ="/" method="post">
-    <h1>what is your userName?</h1>
 
-    <input type="text" name="userName">
-    <br>
-    <br>
-    <h1>And Age?</h1>
-    <input type="number" name="age">
-    <br>
-    <br>
-    <button>send to DB</button>
-    </form>
+    <nav>
+        <div class="logo">💡</div>
+        <div class="nav-links">
+            <a href="/">home</a>
+            <a href="create.html">create</a>
+        </div>
+    </nav>
 
-    <h1>your name is <%= array.at(-1).userName %></h1>
-    <h1>and age is <%= array.at(-1).age %></h1>
+    <div class="container">
+        <h1>home page </h1>
+
+        <!-- <a href="create.ejs" class="btn">create</a> -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
