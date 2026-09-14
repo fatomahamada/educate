@@ -2,7 +2,7 @@ const express =require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port =3001;
-const Mydata = require("./models/mydataschema");
+const students = require("./models/educate");
 
 // auto refresh
 const path =require('path');
@@ -58,12 +58,12 @@ mongoose.connect('mongodb://fatma:X9cRsP.vTD4XKp5@ac-eb5lemd-shard-00-00.uroy8ia
 })
 .catch((err)=>{console.log(err)});
 
-app.post("/", (req, res) => {
-    console.log(req.body);
-
-    const mydata = new Mydata(req.body);
+app.post("/create.html", (req, res) => {
+    
+    const mydata = new students(req.body);
     mydata.save()
-    .then(()=>{res.redirect('/')
+    .then(()=>{res.redirect('/create.html')
     }).catch((err)=>{console.log(err)});
 
 });
+
