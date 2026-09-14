@@ -6,7 +6,7 @@ const student = new Schema({
     age: Number,
     city:String,
     level:Number,
-    phone:Number,
+    phone:String,
 });
 
 const Studentdata = mongoose.model("dbstudent", student);
