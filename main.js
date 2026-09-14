@@ -4,6 +4,7 @@ const app = express();
 const port =3001;
 const students = require("./models/educate");
 
+const massages = require("./models/masage");
 // auto refresh
 const path =require('path');
 const livereload = require('livereload');
@@ -28,7 +29,12 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.get('/', (req, res) => {
-    res.render("index",{});
+    students.find().then((result)=>{
+        res.render("index",{arr:result});
+    }).catch((err)=>{
+        console.log(err);
+    });
+    
 });
 
 app.get('/create.html', (req, res) => {
@@ -62,7 +68,16 @@ app.post("/create.html", (req, res) => {
     
     const mydata = new students(req.body);
     mydata.save()
-    .then(()=>{res.redirect('/create.html')
+    .then(()=>{res.redirect('/')
+    }).catch((err)=>{console.log(err)});
+
+});
+
+app.post("/contact.html", (req, res) => {
+    
+    const mas = new massages(req.body);
+    mas.save()
+    .then(()=>{res.redirect('/')
     }).catch((err)=>{console.log(err)});
 
 });

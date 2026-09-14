@@ -28,13 +28,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <% arr.forEach((item,index) => { %>
+                    <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.fullName %></td>
+                    <td><%= item.age %></td>
+                    <td><%= item.city %></td>
+                    <td><%= item.level %></td>
+                    <td><%= item.phone %></td>
                 </tr>
+                <% }) %>
+                
             </tbody>
         </table>
     </div>
