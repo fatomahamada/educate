@@ -45,8 +45,15 @@ app.get('/update.html', (req, res) => {
     res.render("update",{});
 });
 
-app.get('/show.html', (req, res) => {
-    res.render("show",{});
+app.get('/show.html/:name', (req, res) => {
+    const namm = req.params.name;
+    students.findOne({
+        fullName:namm
+    }).then((iteem)=>{
+        res.render("show",{user:iteem});
+    }).catch((err)=>{
+        console.log(err);
+    });
 });
 
 app.get('/about.html', (req, res) => {
@@ -77,7 +84,8 @@ app.post("/contact.html", (req, res) => {
     
     const mas = new massages(req.body);
     mas.save()
-    .then(()=>{res.redirect('/')
+    .then(()=>{
+        res.redirect('/');
     }).catch((err)=>{console.log(err)});
 
 });

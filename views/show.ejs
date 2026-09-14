@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>show</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="/mystyle.css">
 </head>
 <body>
 
@@ -12,29 +12,31 @@
 
 
     <div class="container">
-        <h1>more detils</h1>
+        <h1>more details</h1>
 
         <div class="details-card">
             <div class="detail-item">
-                <span class="label"></span>
-                <span class="value"></span>
+                <span class="label">Full Name </span>
+                <span class="value"><%= user.fullName %></span>
             </div>
             <div class="detail-item">
-                <span class="label"></span>
-                <span class="value"></span>
+                <span class="label">Age</span>
+                <span class="value"><%= user.age %></span>
             </div>
             <div class="detail-item">
-                <span class="label"></span>
-                <span class="value"></span>
+                <span class="label">City</span>
+                <span class="value"><%= user.city %></span>
             </div>
             <div class="detail-item">
-                <span class="label"></span>
-                <span class="value"></span>
+                <span class="label">Level :</span>
+                <span class="value"><%= user.level %></span>
             </div>
             <div class="detail-item">
-                <span class="label"></span>
-                <span class="value"></span>
+                <span class="label">Phone Number :</span>
+                <span class="value"><%= user.phone %></span>
             </div>
+            
+            
         </div>
     </div>
 <%- include('./components/footer.ejs') %>

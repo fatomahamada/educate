@@ -25,6 +25,7 @@
                     <th>City</th>
                     <th>Level</th>
                     <th>phone</th>
+                    <th>icon</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,7 @@
                     <td><%= item.city %></td>
                     <td><%= item.level %></td>
                     <td><%= item.phone %></td>
+                    <td> <a class="btn" href ="/show.html/<%= item.fullName %>">show</a></td>
                 </tr>
                 <% }) %>
                 
