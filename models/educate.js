@@ -7,7 +7,14 @@ const student = new Schema({
     city:String,
     level:Number,
     phone:String,
-});
+    email:String,
+    gender: String,
+    firstLanguage:String,
+    secondLanguage:String,
+    univarse:String,
+},
+{timestamps:true}
+);
 
 const Studentdata = mongoose.model("dbstudent", student);
 

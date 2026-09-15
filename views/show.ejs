@@ -16,6 +16,10 @@
 
         <div class="details-card">
             <div class="detail-item">
+                <span class="label">ID </span>
+                <span class="value"><%= user._id %></span>
+            </div>
+            <div class="detail-item">
                 <span class="label">Full Name </span>
                 <span class="value"><%= user.fullName %></span>
             </div>
@@ -34,6 +38,36 @@
             <div class="detail-item">
                 <span class="label">Phone Number :</span>
                 <span class="value"><%= user.phone %></span>
+            </div>
+            <div class="detail-item">
+                <span class="label">email address:</span>
+                <span class="value"><%= user.email %></span>
+            </div>
+            <div class="detail-item">
+                <span class="label">first language :</span>
+                <span class="value"><%= user.firstLanguage %></span>
+            </div>
+            <div class="detail-item">
+                <span class="label">second language :</span>
+                <span class="value"><%= user.secondLanguage %></span>
+            </div>
+            <div class="detail-item">
+                <span class="label">gender :</span>
+                <span class="value"><%= user.gender %></span>
+            </div>
+            <div class="detail-item">
+                <span class="label">universe :</span>
+                <span class="value"><%= user.univarse %></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">created At :</span>
+                <span class="value"><%= moment(user.createdAt).fromNow() %></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">last Updated :</span>
+                <span class="value"><%= moment(user.updatedAt).fromNow() %></span>
             </div>
             
             

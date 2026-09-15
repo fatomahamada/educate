@@ -1,28 +1,27 @@
 const express =require('express');
 const mongoose = require('mongoose');
+const moment = require('moment');
 const app = express();
 const port =3001;
 const students = require("./models/educate");
-
 const massages = require("./models/masage");
+
 // auto refresh
 const path =require('path');
 const livereload = require('livereload');
 const LiveReloadServer =livereload.createServer();
 LiveReloadServer.watch(path.join(__dirname,'public'));
-
 const connectlivereload = require ('connect-livereload');
 app.use(connectlivereload());
-
 LiveReloadServer.server.once("connect", () =>{
     setTimeout(()=>{
         LiveReloadServer.refresh("/");
     }, 100);
 });
-
 // 
-app.set('view engine','ejs');
 
+
+app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 
@@ -30,7 +29,8 @@ app.use(express.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
     students.find().then((result)=>{
-        res.render("index",{arr:result});
+        console.log(result);
+        res.render("index",{arr:result,moment:moment});
     }).catch((err)=>{
         console.log(err);
     });
@@ -45,12 +45,9 @@ app.get('/update.html', (req, res) => {
     res.render("update",{});
 });
 
-app.get('/show.html/:name', (req, res) => {
-    const namm = req.params.name;
-    students.findOne({
-        fullName:namm
-    }).then((iteem)=>{
-        res.render("show",{user:iteem});
+app.get('/show.html/:id', (req, res) => {
+    students.findById(req.params.id).then((result)=>{
+        res.render("show",{user:result,moment:moment});
     }).catch((err)=>{
         console.log(err);
     });
@@ -90,3 +87,4 @@ app.post("/contact.html", (req, res) => {
 
 });
 
+students.updateOne

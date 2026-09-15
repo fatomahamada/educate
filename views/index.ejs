@@ -22,9 +22,9 @@
                     <th>ID</th>
                     <th>Full name</th>
                     <th>Age</th>
-                    <th>City</th>
                     <th>Level</th>
                     <th>phone</th>
+                    <th>updated at</th>
                     <th>icon</th>
                 </tr>
             </thead>
@@ -34,10 +34,10 @@
                     <td><%= index + 1 %></td>
                     <td><%= item.fullName %></td>
                     <td><%= item.age %></td>
-                    <td><%= item.city %></td>
                     <td><%= item.level %></td>
                     <td><%= item.phone %></td>
-                    <td> <a class="btn" href ="/show.html/<%= item.fullName %>">show</a></td>
+                    <td><%= moment(item.updatedAt).fromNow() %></td>
+                    <td> <a class="btn" href ="/show.html/<%= item._id %>">show</a></td>
                 </tr>
                 <% }) %>
                 
