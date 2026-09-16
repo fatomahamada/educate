@@ -91,6 +91,15 @@ app.post("/contact.html", (req, res) => {
 
 });
 
+app.post('/search', (req, res) => {
+    students.find({$or:[{firstName:req.body.search},{lastName:req.body.search}]}).then((result)=>{
+        res.render("search",{arr:result,moment:moment});
+    }).catch((err)=>{
+        console.log(err);
+    });
+    
+});
+
 app.delete("/delete/:id",(req,res)=>{
     students.findByIdAndDelete(req.params.id).then(()=>{
         res.redirect('/');
@@ -98,7 +107,6 @@ app.delete("/delete/:id",(req,res)=>{
 });
 
 app.put("/edit/:id",(req,res)=>{
-    console.log(req.body);
     students.findByIdAndUpdate(req.params.id,req.body).then(()=>{
         res.redirect('/');
     }).catch((err)=>{console.log(err)});
