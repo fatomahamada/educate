@@ -17,11 +17,7 @@
         <div class="container">
             <h1>home page </h1>
 
-            <form action="/search" method="post">
-                <input type="text" name="search" placeholder="search using name" style="width: 300px; font-size: 20px;">
-                <button type="submit">search</button>
-            </form>
-
+        
             <!-- <a href="create.ejs" class="btn">create</a> -->
 <% if (arr.length===0) { %>
     <h1> No Data For Display </h1>
@@ -47,7 +43,7 @@
                                 <%= index + 1 %>
                             </td>
                             <td>
-                                <%= item.firstName %><%= item.lastName %>
+                                <%= item.firstName %> <%= item.lastName %>
                             </td>
                             <td>
                                 <%= item.age %>

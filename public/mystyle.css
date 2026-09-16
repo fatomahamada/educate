@@ -12,6 +12,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    direction: ltr;
 }
 
 .logo {
@@ -23,6 +24,8 @@ nav {
     text-decoration: none;
     margin-left: 20px;
     font-size: 20px;
+    text-align: left;
+    margin-right: auto;
 }
 
 .nav-links a:hover {

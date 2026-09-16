@@ -14,7 +14,7 @@
     <div class="container">
         <p style=" text-align: left;">update this item ID: <%= user._id %> </p> 
         <hr>
-        <p style=" text-align: left;">  Name: <%= user.firstName %><%= user.lasttName %></p>
+        <p style=" text-align: left;">  Name: <%= user.firstName %> <%= user.lasttName %></p>
         <hr>
         <br>
         <br>
@@ -59,8 +59,8 @@
             <div class="form-group">
                 <label style=" text-align: left;">Gender</label>
                 <select style=" text-align: left; " name="gender" value="<%= user.gender %>"  required>
-                    <option>Female</option>
-                    <option>Male</option>
+                    <option <%= user.gender==="Female"?"selected":null; %>>Female</option>
+                    <option <%= user.gender==="Male" ?"selected":null; %>>Male</option>
                 </select>
                 
                 <!-- <input type="text" name="gender"> -->

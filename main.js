@@ -92,7 +92,7 @@ app.post("/contact.html", (req, res) => {
 });
 
 app.post('/search', (req, res) => {
-    students.find({$or:[{firstName:req.body.search},{lastName:req.body.search}]}).then((result)=>{
+    students.find({$or:[{firstName:req.body.search.trim()},{lastName:req.body.search.trim()}]}).then((result)=>{
         res.render("search",{arr:result,moment:moment});
     }).catch((err)=>{
         console.log(err);
