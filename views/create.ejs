@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>show</title>
+        <title>create new item</title>
     <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
@@ -13,34 +13,36 @@
     <div class="container" >
             <h1>create new item</h1>
 
-        <form action="/create.html" method="post">
+        <form action="/create.html" method="post" id="MyForm">
             <div class="form-group">
                 <label style=" text-align: left;">Full Name</label>
-                <input type="text" name="fullName">
+                <input id="fullName" type="text" name="fullName" required >
+                <small class="error-msg" id="nameError" >please enter your name</small>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;"> Your Age</label>
-                <input type="number" name="age">
+                <input type="number" name="age" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">City </label>
-                <input type="text"name="city">
+                <input type="text"name="city" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Your Level</label>
-                <input type="number"name="level">
+                <input type="number"name="level" required>
             </div>
             <div class="form-group">
-                <label style=" text-align: left;">Your Phone Number</label>
-                <input type="text" name="phone">
+                <label style="text-align: left;">Your Phone Number</label>
+                <input id="phone"type="text" name="phone" required>
+                <small class="error-msg" id="phoneError" >please enter your phone number content 11 digit</small>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Your Email Address</label>
-                <input type="text" name="email">
+                <input type="email" name="email" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Gender</label>
-                <select name="gender" >
+                <select name="gender" required >
                     <option>Female</option>
                     <option>Male</option>
                 </select>
@@ -49,19 +51,20 @@
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">First Language</label>
-                <input type="text" name="firstLanguage">
+                <input type="text" name="firstLanguage" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Second Language</label>
-                <input type="text" name="secondLanguage">
+                <input type="text" name="secondLanguage" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">univarse</label>
-                <input type="text" name="univarse">
+                <input type="text" name="univarse" required>
             </div>
             <button type="submit" >done</button>
         </form>
     </div>
 <%- include('./components/footer.ejs') %>
+<script src="script.js"></script>
 </body>
 </html>

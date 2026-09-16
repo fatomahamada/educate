@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
+
     <link rel="stylesheet" href="mystyle.css">
 </head>
+
 <body>
 
     <%- include('./components/navbar.ejs') %>
 
 
-    <div class="container">
-        <h1>home page </h1>
+        <div class="container">
+            <h1>home page </h1>
 
-        <!-- <a href="create.ejs" class="btn">create</a> -->
+            <!-- <a href="create.ejs" class="btn">create</a> -->
+<% if (arr.length===0) { %>
+    <h1> No Data For Display </h1>
+<% }  else { %>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Full name</th>
-                    <th>Age</th>
-                    <th>Level</th>
-                    <th>phone</th>
-                    <th>updated at</th>
-                    <th>icon</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% arr.forEach((item,index) => { %>
+
+            <table>
+                <thead>
                     <tr>
-                    <td><%= index + 1 %></td>
-                    <td><%= item.fullName %></td>
-                    <td><%= item.age %></td>
-                    <td><%= item.level %></td>
-                    <td><%= item.phone %></td>
-                    <td><%= moment(item.updatedAt).fromNow() %></td>
-                    <td> <a class="btn" href ="/show.html/<%= item._id %>">show</a></td>
-                </tr>
-                <% }) %>
-                
-            </tbody>
-        </table>
-    </div>
-<%- include('./components/footer.ejs') %>
+                        <th>ID</th>
+                        <th>Full name</th>
+                        <th>Age</th>
+                        <th>Level</th>
+                        <th>phone</th>
+                        <th>updated at</th>
+                        <th>icon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% arr.forEach((item,index)=> { %>
+                        <tr>
+                            <td>
+                                <%= index + 1 %>
+                            </td>
+                            <td>
+                                <%= item.fullName %>
+                            </td>
+                            <td>
+                                <%= item.age %>
+                            </td>
+                            <td>
+                                <%= item.level %>
+                            </td>
+                            <td>
+                                <%= item.phone %>
+                            </td>
+                            <td>
+                                <%= moment(item.updatedAt).fromNow() %>
+                            </td>
+                            <td> <a class="btn" href="/show.html/<%= item._id %>">show</a>
+                                <a class="btn" href="/edit.html/<%= item._id %>">edite</a>
+                                <form style="display: inline;" action="/delete/<%= item._id %>?_method=Delete" method="post">
+                                <button type="submit">
+                                    Delete
+                                </button>
+                                </form>
+
+                            </td>
+                        </tr>
+                        <% }) %>
+
+                </tbody>
+            </table>
+            <% } %> 
+        </div>
+        <%- include('./components/footer.ejs') %>
 </body>
+
 </html>

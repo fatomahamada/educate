@@ -53,6 +53,7 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     background-color: white;
+    text-align: left;
 }
 
 th, td {
@@ -115,6 +116,7 @@ form button {
 .detail-item .label {
     color: #5d4037;
     font-weight: bold;
+    /* text-align: right; */
 }
 
 .detail-item .value {
@@ -208,6 +210,7 @@ footer {
     border: 1px solid #4a2e2b;
     border-radius: 4px;
     background-color: white;
+    text-align: left;
 }
 
 .submit-btn {
@@ -224,4 +227,13 @@ footer {
 
 .submit-btn:hover {
     opacity: 0.9;
+}
+
+
+.error-msg{
+    color:red;
+    margin-top: 6px;
+    display: none;
+    text-align: left;
+    font-size: 12px;
 }

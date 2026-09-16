@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>update</title>
-    <link rel="stylesheet" href="public/mystyle.css">
+    <link rel="stylesheet" href="/mystyle.css">
 </head>
 <body>
 
@@ -12,30 +12,60 @@
 
 
     <div class="container">
-        <h1>update this item ...</h1>
+        <p style=" text-align: left;">update this item ID: <%= user._id %> </p> 
+        <hr>
+        <p style=" text-align: left;">  Name: <%= user.fullName %></p>
+        <hr>
+        <br>
+        <br>
 
-        <form>
+        <form action="/update.html" method="post">
             <div class="form-group">
-                <label></label>
-                <input type="text">
+                <label style=" text-align: left;">Full Name</label>
+                <input  style=" text-align: left;" type="text" name="fullName" placeholder="<%= user.fullName %>" required>
             </div>
             <div class="form-group">
-                <label></label>
-                <input type="text">
+                <label style=" text-align: left;"> Your Age</label>
+                <input style=" text-align: left;" type="number" name="age" placeholder="<%= user.age %>" required>
             </div>
             <div class="form-group">
-                <label></label>
-                <input type="text">
+                <label style=" text-align: left;">City </label>
+                <input style=" text-align: left;" type="text"name="city" placeholder="<%= user.city %>" required>
             </div>
             <div class="form-group">
-                <label></label>
-                <input type="text">
+                <label style=" text-align: left;">Your Level</label>
+                <input type="number"name="level" placeholder="<%= user.level %>" required>
             </div>
             <div class="form-group">
-                <label></label>
-                <input type="text">
+                <label style=" text-align: left;">Your Phone Number</label>
+                <input type="text" name="phone" placeholder="<%= user.phone %>" required>
             </div>
-            <button type="submit">update</button>
+            <div class="form-group">
+                <label style=" text-align: left;">Your Email Address</label>
+                <input type="email" name="email" placeholder="<%= user.email %>" required>
+            </div>
+            <div class="form-group">
+                <label style=" text-align: left;">Gender</label>
+                <select style=" text-align: left; " name="gender" placeholder="<%= user.gender %>"  required>
+                    <option>Female</option>
+                    <option>Male</option>
+                </select>
+                
+                <!-- <input type="text" name="gender"> -->
+            </div>
+            <div class="form-group">
+                <label style=" text-align: left;">First Language</label>
+                <input type="text" name="firstLanguage" placeholder="<%= user.firstLanguage %>" required>
+            </div>
+            <div class="form-group">
+                <label style=" text-align: left;">Second Language</label>
+                <input type="text" name="secondLanguage" placeholder="<%= user.secondLanguage %>" required>
+            </div>
+            <div class="form-group">
+                <label style=" text-align: left;">univarse</label>
+                <input type="text" name="univarse" placeholder="<%= user.univarse %>" required>
+            </div>
+            <button type="submit" >update</button>
         </form>
     </div>
 <%- include('./components/footer.ejs') %>
