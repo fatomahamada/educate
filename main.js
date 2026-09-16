@@ -96,3 +96,10 @@ app.delete("/delete/:id",(req,res)=>{
         res.redirect('/');
     }).catch((err)=>{console.log(err)});
 });
+
+app.put("/edit/:id",(req,res)=>{
+    console.log(req.body);
+    students.findByIdAndUpdate(req.params.id,req.body).then(()=>{
+        res.redirect('/');
+    }).catch((err)=>{console.log(err)});
+});

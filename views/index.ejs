@@ -17,6 +17,11 @@
         <div class="container">
             <h1>home page </h1>
 
+            <form action="/pepole" method="GET">
+                <input type="text" name="search" placeholder="search using name" style="width: 300px; font-size: 20px;">
+                <button type="submit">search</button>
+            </form>
+
             <!-- <a href="create.ejs" class="btn">create</a> -->
 <% if (arr.length===0) { %>
     <h1> No Data For Display </h1>
@@ -42,7 +47,7 @@
                                 <%= index + 1 %>
                             </td>
                             <td>
-                                <%= item.fullName %>
+                                <%= item.firstName %><%= item.lastName %>
                             </td>
                             <td>
                                 <%= item.age %>
@@ -58,7 +63,8 @@
                             </td>
                             <td> <a class="btn" href="/show.html/<%= item._id %>">show</a>
                                 <a class="btn" href="/edit.html/<%= item._id %>">edite</a>
-                                <form style="display: inline;" action="/delete/<%= item._id %>?_method=Delete" method="post">
+                                <form style="display: inline;" action="/delete/<%= item._id %>?_method=Delete" method="post"
+                                    onsubmit="return confirm('you are sure?');">
                                 <button type="submit">
                                     Delete
                                 </button>

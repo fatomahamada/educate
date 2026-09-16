@@ -14,39 +14,51 @@
     <div class="container">
         <p style=" text-align: left;">update this item ID: <%= user._id %> </p> 
         <hr>
-        <p style=" text-align: left;">  Name: <%= user.fullName %></p>
+        <p style=" text-align: left;">  Name: <%= user.firstName %><%= user.lasttName %></p>
         <hr>
         <br>
         <br>
 
-        <form action="/update.html" method="post">
+        <form action="/edit/<%= user._id %>?_method=PUT" method="Post">
             <div class="form-group">
-                <label style=" text-align: left;">Full Name</label>
-                <input  style=" text-align: left;" type="text" name="fullName" placeholder="<%= user.fullName %>" required>
+                <label style=" text-align: left;">First Name</label>
+                <input  style=" text-align: left;" type="text" name="firstName" value="<%= user.firstName %>" required>
+            </div>
+            <div class="form-group">
+                <label style=" text-align: left;">last Name</label>
+                <input   style=" text-align: left;" type="text" name="lastName" value="<%= user.firstName %>" required >
             </div>
             <div class="form-group">
                 <label style=" text-align: left;"> Your Age</label>
-                <input style=" text-align: left;" type="number" name="age" placeholder="<%= user.age %>" required>
+                <input style=" text-align: left;" type="number" name="age" value="<%= user.age %>" required>
             </div>
             <div class="form-group">
-                <label style=" text-align: left;">City </label>
-                <input style=" text-align: left;" type="text"name="city" placeholder="<%= user.city %>" required>
+                <label style=" text-align: left;">Country </label>
+                <select style=" text-align: left; " name="city"  required>
+                <% var country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"]; %>
+
+                    <% country_list.forEach(item => { %>
+                        <option <%= user.city===item ?"selected":null; %>><%= item %></option>
+                    <% }) %>
+            
+                </select>
+            
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Your Level</label>
-                <input type="number"name="level" placeholder="<%= user.level %>" required>
+                <input type="number"name="level" value="<%= user.level %>" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Your Phone Number</label>
-                <input type="text" name="phone" placeholder="<%= user.phone %>" required>
+                <input type="text" name="phone" value="<%= user.phone %>" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Your Email Address</label>
-                <input type="email" name="email" placeholder="<%= user.email %>" required>
+                <input type="email" name="email" value="<%= user.email %>" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Gender</label>
-                <select style=" text-align: left; " name="gender" placeholder="<%= user.gender %>"  required>
+                <select style=" text-align: left; " name="gender" value="<%= user.gender %>"  required>
                     <option>Female</option>
                     <option>Male</option>
                 </select>
@@ -55,15 +67,15 @@
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">First Language</label>
-                <input type="text" name="firstLanguage" placeholder="<%= user.firstLanguage %>" required>
+                <input type="text" name="firstLanguage" value="<%= user.firstLanguage %>" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">Second Language</label>
-                <input type="text" name="secondLanguage" placeholder="<%= user.secondLanguage %>" required>
+                <input type="text" name="secondLanguage" value="<%= user.secondLanguage %>" required>
             </div>
             <div class="form-group">
                 <label style=" text-align: left;">univarse</label>
-                <input type="text" name="univarse" placeholder="<%= user.univarse %>" required>
+                <input type="text" name="univarse" value="<%= user.univarse %>" required>
             </div>
             <button type="submit" >update</button>
         </form>
