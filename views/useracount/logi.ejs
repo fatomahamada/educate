@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/mystyle.css">
+</head>
+
+<body style="background-color: rgb(245, 246, 247);">
+
+        <%- include('../components/navbar.ejs') %>
+
+        <div class="container">
+            <h1>login page </h1>
+        </div>
+
+        <div class ="cont">
+            <form action="/" method="post"style="display: flex; gap: 15; flex-direction: column;" >
+                <h1 style="text-align: center;">login</h1>
+                <label > Your Name            </label><br>
+                <input name="" type="" style="width:700px; ">
+                <br>
+                <label>       YOUR PASSWORD         </label><br>
+                <input name="" type="" style="width:700px; ">
+                <br>
+                <button type="submit" >login</button>
+                <p style="text-align: center;">you dont have an account <a href="./register.html">register</a></p>
+            </form>
+        </div>
+<%- include('../components/footer.ejs') %>
+</body>
+
+</html>

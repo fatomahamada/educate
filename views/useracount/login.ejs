@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <%- include('../components/navbar.ejs') %>
+    <main class="main-content">
+        <div class="page-container">
+            
+            <div class="login-section">
+                <div class="login-card">
+                    <h1 class="login-title">Login</h1>
+                    
+                    <form action="/login" method="POST">
+                        <div class="input-group">
+                            <label for="username">User Name</label>
+                            <input type="text" id="username" name="userName" placeholder="Enter your userName" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required>
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Login</button>
+                    </form>
+
+                    <div class="register-link">
+                        Don't have an account? <a href="/register.html">Register here</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <div class="image-overlay">
+                    <h2>Student Portal</h2>
+                    <p>Start your journey and manage your education efficiently.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

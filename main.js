@@ -1,9 +1,10 @@
 const express =require('express');
 const mongoose = require('mongoose');
-
+const User = require("./models/user");
 const app = express();
-const port =process.env.PORT||3001;
-
+const bcrypt = require("bcrypt");
+const port =3001;
+const moment = require('moment');
 const allRouters = require("./routers/allRouts");
 
 const methodoverride =require('method-override');
@@ -27,7 +28,48 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 
+app.get("/login.html",(req, res) => {
+    res.render("useracount/login",);
+});
+app.get("/register.html",(req, res) => {
+    res.render("useracount/register",);
+});
 
+app.post("/register",async (req, res) => {
+    try{
+        const hashed=await bcrypt.hash(req.body.password.trim(),10);
+        const user = new User({
+            userName:req.body.userName,
+            password:hashed,
+            Name:req.body.Name,
+            email:req.body.email,
+            age:req.body.age,
+            gender:req.body.gender,
+            phone:req.body.phone,
+        });
+        await user.save();
+        res.redirect('/');
+
+    }
+    catch(err){console.log(err);}
+});
+
+
+app.post("/login", async(req, res) => {
+
+    try{
+        const user=await User.findOne({ userName:req.body.userName.trim()});
+        if(user){
+            const isPasswordmatch=await bcrypt.compare(req.body.password.trim(),user.password);
+            if(isPasswordmatch){
+                res.redirect('/');
+            }else{
+                res.redirect('/login.html');
+            }
+        }
+    }
+    catch(err){console.log(err);}
+});
 
 
 

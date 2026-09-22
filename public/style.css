@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f6f4;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.page-container {
+    display: flex;
+    width: 1150px;
+    max-width: 100%;
+    min-height: 520px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-section {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.login-title {
+    font-size: 2rem;
+    color: #4a2c2a;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e1dcd8;
+    border-radius: 8px;
+    background-color: #faf8f6;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #4a2c2a;
+    background-color: #ffffff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a2c2a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #361f1e;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: #4a2c2a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.image-section {
+    flex: 1;
+    background-image: url('educate.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.image-overlay {
+    
+    backdrop-filter: blur(4px);
+    padding: 35px 25px;
+    border-radius: 12px;
+    color: #4a2c2a;
+    text-align: center;
+    max-width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.image-overlay h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.image-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+    .image-section {
+        display: none;
+    }
+}
+nav {
+    background-color: #5d4037; 
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: ltr;
+}
+
+.logo {
+    font-size: 2rem; 
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: left;
+    margin-right: auto;
+}
+
+.nav-links a:hover {
+    color:#dcaabb;
+    font-size: 25px;
+}
+
+footer {
+    background-color: #f8bbd0;
+    color: #4a2e2b;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 12%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #4a2e2b;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #5d4037;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
