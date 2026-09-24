@@ -2,6 +2,8 @@
 const moment = require('moment');
 const massages = require("../models/masage");
 const students = require("../models/educate");
+
+
 const student_index_get = (req, res) => {
     students.find().then((result)=>{
         res.render("index",{arr:result,moment:moment});

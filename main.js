@@ -6,6 +6,9 @@ const bcrypt = require("bcrypt");
 const port =3001;
 const moment = require('moment');
 const allRouters = require("./routers/allRouts");
+const jwt = require('jsonwebtoken');
+const cookie = require('cookie-parser');
+app.use(cookie());
 
 const methodoverride =require('method-override');
 app.use(methodoverride('_method'));
@@ -35,6 +38,11 @@ app.get("/register.html",(req, res) => {
     res.render("useracount/register",);
 });
 
+app.get('/logout.html',(req,res)=>{
+    res.clearCookie("token");
+    res.redirect('/login.html');
+});
+
 app.post("/register",async (req, res) => {
     try{
         const hashed=await bcrypt.hash(req.body.password.trim(),10);
@@ -62,11 +70,23 @@ app.post("/login", async(req, res) => {
         if(user){
             const isPasswordmatch=await bcrypt.compare(req.body.password.trim(),user.password);
             if(isPasswordmatch){
+                const token = jwt.sign(
+                    {userId:user._id,email:user.email},
+                    "Fatma_super_Secret",
+                    {expiresIn:'1h'}
+                );
+                res.cookie('token',token,{
+                    httpOnly:true,
+                    maxAge:3600000
+                });
                 res.redirect('/');
             }else{
                 res.redirect('/login.html');
             }
         }
+        else{
+                res.redirect('/login.html');
+            }
     }
     catch(err){console.log(err);}
 });
